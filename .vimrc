@@ -84,7 +84,7 @@ set backspace=2
 " 允许backspace和光标键跨越行边界
 set whichwrap+=<,>,h,l
 "启动鼠标
-set mouse=a
+set mouse=v
 set selection=exclusive
 set selectmode=mouse,key
 "文件类型
