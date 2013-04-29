@@ -4,6 +4,8 @@
 "关闭窗口Ctrl+w+q
 "设置颜色主题为desert
 colorscheme desert
+"设置光标行
+set cursorline
 "不使用vi默认键盘布局
 set nocompatible
 "历史文件行数
