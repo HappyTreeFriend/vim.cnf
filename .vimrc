@@ -6,6 +6,8 @@
 colorscheme desert
 "不使用vi默认键盘布局
 set nocompatible
+"设置光标行
+"set cursorline
 "历史文件行数
 set history=100
 "在处理未保存文件时弹出确认
@@ -60,11 +62,15 @@ set shiftwidth=4
 "空格代替制表符
 set expandtab
 "页面文字宽度
-set textwidth=79
+"set textwidth=79
+"设置自动折行
+set wrap
 "c语言格式对齐
 set cindent
 "不要备份文件
+if has("vms")
 set nobackup
+endif
 " 不要生成swap文件，当buffer被丢弃的时候隐藏它
 setlocal noswapfile
 set bufhidden=hide
@@ -113,6 +119,7 @@ inoremap <F8> <C-x><C-o>
 autocmd Filetype python set complete+=k~/.vim/tools/pydiction
 "自动使用新文件模板
 autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
+autocmd BufNewFile *.sh 0r ~/.vim/template/simple.sh
 "Format the statussline
 "Nice statusbar
 set laststatus=2
@@ -159,3 +166,6 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 "NERDTreeToggle
 "按F3切换树形目录
 map <F3> :NERDTreeToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"markdown
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
